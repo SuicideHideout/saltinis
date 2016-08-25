@@ -99,7 +99,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/SuicideHideout/saltinis/master/lang/Langindex.json", function (json) {
+        $.get("https://rawgit.com/SuicideHideout/saltinis/master/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -236,9 +236,9 @@
     var botCreatorIDs = ["3851534", "4105209"];
 
     var basicBot = {
-        version: "ne tavo reikalas",
+        version: "v2.0.12",
         status: false,
-        name: "SuicideBotas, versija:",
+        name: "basicBot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/SuicideHideout/saltinis/master/basicBot.js",
         cmdLink: "http://git.io/245Ppg",
@@ -248,7 +248,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "basicBot",
+            botName: "SuicideBotas",
             language: "english",
             chatLink: "https://rawgit.com/SuicideHideout/saltinis/master/lang/en.json",
             scriptLink: "https://rawgit.com/SuicideHideout/saltinis/master/basicBot.js",
@@ -2490,11 +2490,11 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentlang, {language: basicBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/basicBot/source/master/lang/langIndex.json", function (json) {
+                        $.get("https://rawgit.com/SuicideHideout/saltinis/master/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
-                                API.sendChat(subChat(basicBot.chat.langerror, {link: "http://git.io/vJ9nI"}));
+                                API.sendChat(subChat(basicBot.chat.langerror, {link: "https://rawgit.com/SuicideHideout/saltinis/master/lang/langIndex.json"}));
                             }
                             else {
                                 basicBot.settings.language = argument;
