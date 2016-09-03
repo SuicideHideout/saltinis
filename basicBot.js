@@ -254,7 +254,7 @@
             scriptLink: "https://rawgit.com/SuicideHideout/saltinis/master/basicBot.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
-            startupVolume: 0, // 0-100
+            startupVolume: 50, // 0-100
             startupEmoji: false, // true or false
             autowoot: true,
             autoskip: false,
@@ -294,7 +294,7 @@
             afkRankCheck: "ambassador",
             motdEnabled: false,
             motdInterval: 5,
-            motd: "Temporary Message of the Day",
+            motd: "MuzikaHD botas by Vaska11 v.2",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
