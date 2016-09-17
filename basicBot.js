@@ -3,8 +3,14 @@
  *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
  *This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
  */
-
-
+<html>
+<div id="cyborgBot" style="position:absolute;right:-3px;top:70px;z-index:90"><a style="cursor:pointer;display:block;padding:4px;font-size:11px;background-color:#fff;color:black;font-weight:bold;border-radius:6px 0px 0px 6px;border:2px solid #6EBDF5;padding-right:8px;">kBot</a></div>
+<html />
+$('#woot').click();
+API.on(API.ADVANCE,callback);
+function callback(obj){
+        $('#woot').click();
+}
 (function () {
 
     /*window.onerror = function() {
@@ -3721,10 +3727,4 @@
     };
 
     loadChat(basicBot.startup);
-<div id="cyborgBot" style="position:absolute;right:-3px;top:70px;z-index:90"><a style="cursor:pointer;display:block;padding:4px;font-size:11px;background-color:#fff;color:black;font-weight:bold;border-radius:6px 0px 0px 6px;border:2px solid #6EBDF5;padding-right:8px;">kBot</a></div>
-$('#woot').click();
-API.on(API.ADVANCE,callback);
-function callback(obj){
-        $('#woot').click();
-}
 }).call(this);
