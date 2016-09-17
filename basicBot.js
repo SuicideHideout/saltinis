@@ -3722,4 +3722,9 @@
 
     loadChat(basicBot.startup);
 <div id="cyborgBot" style="position:absolute;right:-3px;top:70px;z-index:90"><a style="cursor:pointer;display:block;padding:4px;font-size:11px;background-color:#fff;color:black;font-weight:bold;border-radius:6px 0px 0px 6px;border:2px solid #6EBDF5;padding-right:8px;">kBot</a></div>
+$('#woot').click();
+API.on(API.ADVANCE,callback);
+function callback(obj){
+        $('#woot').click();
+}
 }).call(this);
