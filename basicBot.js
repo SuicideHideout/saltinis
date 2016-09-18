@@ -367,7 +367,7 @@
             roulette: {
                 rouletteStatus: false,
                 participants: [],
-                countdown: 40,
+                countdown: null,
                 startRoulette: function () {
                     basicBot.room.roulette.rouletteStatus = true;
                     basicBot.room.roulette.countdown = setTimeout(function () {
@@ -383,10 +383,10 @@
                     var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
                     var user = basicBot.userUtilities.lookupUser(winner);
                     var name = user.username;
-                    API.sendChat(subChat(basicBot.chat.winnerpicked, {name: name, position: pos}));
-                    setTimeout(function (winner, pos) {
-                        basicBot.userUtilities.moveUser(winner, pos, false);
-                    }, 1 * 1000, winner, pos);
+                    API.sendChat(subChat(basicBot.chat.winnerpicked, {name: name, position: pos1}));
+                    setTimeout(function (winner, pos1) {
+                        basicBot.userUtilities.moveUser(winner, pos1, false);
+                    }, 1 * 1000, winner, pos1);
                 }
             },
             usersUsedThor: []
@@ -3715,6 +3715,21 @@
                     else {
                         if (typeof basicBot.settings.youtubeLink === "string")
                             API.sendChat(subChat(basicBot.chat.youtube, {name: chat.un, link: basicBot.settings.youtubeLink}));
+                    }
+                }
+            }
+        }
+    };
+            rules: {
+                command: 'rules',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (typeof basicBot.settings.youtubeLink === "string")
+                            API.sendChat(subChat(basicBot.chat.rules, {name: chat.un,}));
                     }
                 }
             }
