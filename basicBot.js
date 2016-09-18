@@ -3720,106 +3720,110 @@
             }
         }
     };
-{
-case "!lottery":
-      crowd = bot.getUsers();
-      randomPerson = Math.floor(Math.random() * crowd.length);
-      var lotteryPrizes = Math.floor(Math.random() * 30);
-      switch (lotteryPrizes) {
-        case 0:
-          bot.sendChat('Congratulations! You have won a free song to play on the DJ Stage!');
-          break;
-        case 1:
-          bot.sendChat('Congratulations! You have won a free bird!');
-          break;
-        case 2:
-          bot.sendChat('Congratulations! You have won a free battery!');
-          break;
-        case 3:
-          bot.sendChat('Congratulations! You have won a free hug!');
-          break;
-        case 4:
-          bot.sendChat('Congratulations! You have won a free hand-shake!');
-          break;
-        case 5:
-          bot.sendChat('Congratulations! You have won a free bag of air!');
-          break;
-        case 6:
-          bot.sendChat('Congratulations! You have won a free spider!');
-          break;
-        case 7:
-          bot.sendChat('Congratulations! You have won a free bag of oxygen!');
-          break;
-        case 8:
-          bot.sendChat('Congratulations! You have won a free hotdog!');
-          break;
-        case 9:
-          bot.sendChat('Congratulations! You have won a free octopus!');
-          break;
-        case 10:
-          bot.sendChat('Congratulations! You have won a free cat!');
-          break;
-        case 11:
-          bot.sendChat('Congratulations! You have won a free moth!');
-          break;
-        case 12:
-          bot.sendChat('Congratulations! You have won a free bag of cat treats!');
-          break;
-        case 13:
-          bot.sendChat('Congratulations! You have won a free hedgehog!');
-          break;
-        case 14:
-          bot.sendChat('Congratulations! You have won a free bat!');
-          break;
-        case 15:
-          bot.sendChat('Congratulations! You have won a free piece of fluff!');
-          break;
-        case 16:
-          bot.sendChat('Congratulations! You have won a free bug!');
-          break;
-        case 17:
-          bot.sendChat('Congratulations! You have won a free bag of potato chips!');
-          break;
-        case 18:
-          bot.sendChat('Congratulations! You have won a free fox!');
-          break;
-        case 19:
-          bot.sendChat('Congratulations! You have won a free taco!');
-          break;
-        case 20:
-          bot.sendChat('Congratulations! You have won a free piece of cheese!');
-          break;
-        case 21:
-          bot.sendChat('Congratulations! You have won a free drink!');
-          break;
-        case 22:
-          bot.sendChat('Congratulations! You have won a free bag of bacon!');
-          break;
-        case 23:
-          bot.sendChat('Congratulations! You have won a free box!');
-          break;
-        case 24:
-          bot.sendChat('Congratulations! You have won a free piece of paper!');
-          break;
-        case 25:
-          bot.sendChat('Congratulations! You have won a free piece of turkey!');
-          break;
-        case 26:
-          bot.sendChat('Congratulations! You have won a free piece of cloth!');
-          break;
-        case 27:
-          bot.sendChat('Congratulations! You have won a free bag of cans!');
-          break;
-        case 28:
-          bot.sendChat('Congratulations! You have won a free fluffy cat!');
-          break;
-        case 29:
-          bot.sendChat('Congratulations! You have won a free piece of tape!');
-          break;
-        case 30:
-          bot.sendChat('Congratulations! You have won a free piece of cardboard!');
-          break;
-      };
+        loterija:{
+            case "!lottery":
+            crowd = bot.getUsers();
+            randomPerson = Math.floor(Math.random() * crowd.length);
+            var lotteryPrizes = Math.floor(Math.random() * 30);
+            switch (lotteryPrizes) {
+            case 0:
+            bot.sendChat('Congratulations! You have won a free song to play on the DJ Stage!');
+            break;
+            case 1:
+            bot.sendChat('Congratulations! You have won a free bird!');
+            break;
+            case 2:
+            bot.sendChat('Congratulations! You have won a free battery!');
+            break;
+            case 3:
+            bot.sendChat('Congratulations! You have won a free hug!');
+            break;
+            case 4:
+            bot.sendChat('Congratulations! You have won a free hand-shake!');
+            break;
+            case 5:
+            bot.sendChat('Congratulations! You have won a free bag of air!');
+            break;
+            case 6:
+            bot.sendChat('Congratulations! You have won a free spider!');
+            break;
+            case 7:
+            bot.sendChat('Congratulations! You have won a free bag of oxygen!');
+            break;
+            case 8:
+            bot.sendChat('Congratulations! You have won a free hotdog!');
+            break;
+            case 9:
+            bot.sendChat('Congratulations! You have won a free octopus!');
+            break;
+            case 10:
+            bot.sendChat('Congratulations! You have won a free cat!');
+            break;
+            case 11:
+            bot.sendChat('Congratulations! You have won a free moth!');
+            break;
+            case 12:
+            bot.sendChat('Congratulations! You have won a free bag of cat treats!');
+            break;
+            case 13:
+            bot.sendChat('Congratulations! You have won a free hedgehog!');
+            break;
+            case 14:
+            bot.sendChat('Congratulations! You have won a free bat!');
+            break;
+            case 15:
+            bot.sendChat('Congratulations! You have won a free piece of fluff!');
+            break;
+            case 16:
+            bot.sendChat('Congratulations! You have won a free bug!');
+            break;
+            case 17:
+            bot.sendChat('Congratulations! You have won a free bag of potato chips!');
+            break;
+            case 18:
+            bot.sendChat('Congratulations! You have won a free fox!');
+            break;
+            case 19:
+            bot.sendChat('Congratulations! You have won a free taco!');
+            break;
+            case 20:
+            bot.sendChat('Congratulations! You have won a free piece of cheese!');
+            break;
+            case 21:
+            bot.sendChat('Congratulations! You have won a free drink!');
+            break;
+            case 22:
+            bot.sendChat('Congratulations! You have won a free bag of bacon!');
+            break;
+            case 23:
+            bot.sendChat('Congratulations! You have won a free box!');
+            break;
+            case 24:
+            bot.sendChat('Congratulations! You have won a free piece of paper!');
+            break;
+            case 25:
+            bot.sendChat('Congratulations! You have won a free piece of turkey!');
+            break;
+            case 26:
+            bot.sendChat('Congratulations! You have won a free piece of cloth!');
+            break;
+            case 27:
+            bot.sendChat('Congratulations! You have won a free bag of cans!');
+            break;
+            case 28:
+            bot.sendChat('Congratulations! You have won a free fluffy cat!');
+            break;
+            case 29:
+            bot.sendChat('Congratulations! You have won a free piece of tape!');
+            break;
+            case 30:
+            bot.sendChat('Congratulations! You have won a free piece of cardboard!');
+            break;
+                    }
+                }
+            }
+        }
+    };
 
     loadChat(basicBot.startup);
 }).call(this);
