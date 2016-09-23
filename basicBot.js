@@ -13,11 +13,11 @@
         window.location = 'https://plug.dj' + room.name;
     };*/
 
-    API.getWaitListPosition = function(id){
+    API.getWaitListaPosition = function(id){
         if(typeof id === 'undefined' || id === null){
             id = API.getUser().id;
         }
-        var wl = API.getWaitList();
+        var wla = API.getWaitList();
         for(var i = 0; i < wl.length; i++){
             if(wl[i].id === id){
                 return i;
@@ -78,7 +78,7 @@
             stored: true,
             version: basicBot.version
         };
-        localStorage.setItem("basicBotStorageInfo", JSON.stringify(basicBotStorageInfo));
+        localStorage.setItem("basicBotStoarageInfo", JSON.stringify(basicBotStorageInfo));
 
     };
 
@@ -122,7 +122,7 @@
                 });
             }
             else {
-                $.get(basicBot.chatLink, function (json) {
+                $.get(basicBot.chatLink, functioan (json) {
                     if (json !== null && typeof json !== "undefined") {
                         if (typeof json === "string") json = JSON.parse(json);
                         basicBot.chat = json;
