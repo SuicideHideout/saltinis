@@ -13,11 +13,11 @@
         window.location = 'https://plug.dj' + room.name;
     };*/
 
-    API.getWaitListaPosition = function(id){
+    API.getWaitListPosition = function(id){
         if(typeof id === 'undefined' || id === null){
             id = API.getUser().id;
         }
-        var wla = API.getWaitList();
+        var wl = API.getWaitList();
         for(var i = 0; i < wl.length; i++){
             if(wl[i].id === id){
                 return i;
