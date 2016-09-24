@@ -122,7 +122,7 @@
                 });
             }
             else {
-                $.get(basicBot.chatLink, functioan (json) {
+                $.get(basicBot.chatLink, function (json) {
                     if (json !== null && typeof json !== "undefined") {
                         if (typeof json === "string") json = JSON.parse(json);
                         basicBot.chat = json;
