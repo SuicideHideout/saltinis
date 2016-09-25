@@ -5,7 +5,6 @@
  */
 
 
-
 (function () {
 
     /*window.onerror = function() {
@@ -58,7 +57,6 @@
             $.getScript('https://cdn.jsdelivr.net/sockjs/1.0.3/sockjs.min.js', loadSocket);
         } else loadSocket();
     }
-
     var sendToSocket = function () {
         var basicBotSettings = basicBot.settings;
         var basicBotRoom = basicBot.room;
@@ -78,7 +76,7 @@
             stored: true,
             version: basicBot.version
         };
-        localStorage.setItem("basicBotStoarageInfo", JSON.stringify(basicBotStorageInfo));
+        localStorage.setItem("basicBotStorageInfo", JSON.stringify(basicBotStorageInfo));
 
     };
 
@@ -232,12 +230,12 @@
         return str;
     };
 
-    var botCreator = "Vaska11";
-    var botMaintainer = "UndeadCorpse"
-    var botCreatorIDs = ["6506524", "5200812"];
+    var botCreator = "Yemasthui";
+    var botMaintainer = "Benzi"
+    var botCreatorIDs = ["3851534", "4105209", "3934992"];
 
     var basicBot = {
-        version: "v2.0.12",
+        version: "2.9.1",
         status: false,
         name: "basicBot",
         loggedInID: null,
@@ -249,13 +247,13 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "cyborgbot",
+            botName: "basicBot",
             language: "english",
             chatLink: "https://rawgit.com/SuicideHideout/saltinis/master/lang/en.json",
             scriptLink: "https://rawgit.com/SuicideHideout/saltinis/master/basicBot.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
-            startupVolume: 50, // 0-100
+            startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
             autowoot: true,
             autoskip: false,
@@ -295,7 +293,7 @@
             afkRankCheck: "ambassador",
             motdEnabled: false,
             motdInterval: 5,
-            motd: "MuzikaHD botas by Vaska11 v.2",
+            motd: "Temporary Message of the Day",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
@@ -383,10 +381,10 @@
                     var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
                     var user = basicBot.userUtilities.lookupUser(winner);
                     var name = user.username;
-                    API.sendChat(subChat(basicBot.chat.winnerpicked, {name: name, position: pos1}));
-                    setTimeout(function (winner, pos1) {
-                        basicBot.userUtilities.moveUser(winner, pos1, false);
-                    }, 1 * 1000, winner, pos1);
+                    API.sendChat(subChat(basicBot.chat.winnerpicked, {name: name, position: pos}));
+                    setTimeout(function (winner, pos) {
+                        basicBot.userUtilities.moveUser(winner, pos, false);
+                    }, 1 * 1000, winner, pos);
                 }
             },
             usersUsedThor: []
@@ -654,6 +652,7 @@
                 }
             },
             afkCheck: function () {
+                console.log('afk check triggered');
                 if (!basicBot.status || !basicBot.settings.afkRemoval) return void (0);
                 var rank = basicBot.roomUtilities.rankToNumber(basicBot.settings.afkRankCheck);
                 var djlist = API.getWaitList();
@@ -672,27 +671,28 @@
                                 var time = basicBot.roomUtilities.msToStr(inactivity);
                                 var warncount = user.afkWarningCount;
                                 if (inactivity > basicBot.settings.maximumAfk * 60 * 1000) {
+                                    console.log('inactive user:', user);
                                     if (warncount === 0) {
+                                        console.log('warncount 0:', name);
                                         API.sendChat(subChat(basicBot.chat.warning1, {name: name, time: time}));
                                         user.afkWarningCount = 3;
                                         user.afkCountdown = setTimeout(function (userToChange) {
                                             userToChange.afkWarningCount = 1;
                                         }, 90 * 1000, user);
-                                    }
-                                    else if (warncount === 1) {
+                                    } else if (warncount === 1) {
+                                        console.log('warncount 1:', name);
                                         API.sendChat(subChat(basicBot.chat.warning2, {name: name}));
                                         user.afkWarningCount = 3;
                                         user.afkCountdown = setTimeout(function (userToChange) {
                                             userToChange.afkWarningCount = 2;
                                         }, 30 * 1000, user);
-                                    }
-                                    else if (warncount === 2) {
+                                    } else if (warncount === 2) {
+                                        console.log('warncount 2:', name);
                                         var pos = API.getWaitListPosition(id);
                                         if (pos !== -1) {
                                             pos++;
                                             basicBot.room.afkList.push([id, Date.now(), pos]);
                                             user.lastDC = {
-
                                                 time: null,
                                                 position: null,
                                                 songCount: 0
@@ -1499,7 +1499,6 @@
                                 if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                                 if( !basicBot.commands.executable(this.rank, chat) ) return void (0);
                                 else{
-
                                 }
                         }
                 },
@@ -2047,9 +2046,7 @@
             },
 
             /*
-
             // This does not work anymore.
-
             deletechatCommand: {
                 command: 'deletechat',
                 rank: 'mod',
@@ -2070,18 +2067,15 @@
                         for (var i = 0; i < chats.length; i++) {
                             var n = from[i].textContent;
                             if (name.trim() === n.trim()) {
-
                                 // var messagecid = $(message)[i].getAttribute('data-cid');
                                 // var emotecid = $(emote)[i].getAttribute('data-cid');
                                 // API.moderateDeleteChat(messagecid);
-
                                 // try {
                                 //     API.moderateDeleteChat(messagecid);
                                 // }
                                 // finally {
                                 //     API.moderateDeleteChat(emotecid);
                                 // }
-
                                 if (typeof $(message)[i].getAttribute('data-cid') == "undefined"){
                                     API.moderateDeleteChat($(emote)[i].getAttribute('data-cid')); // works well with normal messages but not with emotes due to emotes and messages are seperate.
                                 } else {
@@ -2093,7 +2087,6 @@
                     }
                 }
             },
-
             */
 
             deletechatCommand: {
@@ -2491,11 +2484,11 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentlang, {language: basicBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/SuicideHideout/saltinis/master/lang/langIndex.json", function (json) {
+                        $.get("https://rawgit.com/basicBot/source/master/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
-                                API.sendChat(subChat(basicBot.chat.langerror, {link: "https://rawgit.com/SuicideHideout/saltinis/master/lang/langIndex.json"}));
+                                API.sendChat(subChat(basicBot.chat.langerror, {link: "http://git.io/vJ9nI"}));
                             }
                             else {
                                 basicBot.settings.language = argument;
@@ -3720,5 +3713,6 @@
             }
         }
     };
-loadChat(basicBot.startup);
+
+    loadChat(basicBot.startup);
 }).call(this);
