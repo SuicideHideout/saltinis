@@ -76,8 +76,9 @@ i.icon.icon-chat-dj {
         opacity: 0.60;
 }
 #woot.selected, #woot .bottom, #woot.crowd-response.disabled.active .bottom {
-	background: linear-gradient(to top,#3D9C82,rgba(61, 156, 130, 0.60) 90%);
-        opacity: 0.60;
+        color:#378654;
+	background-color:#224E00;
+        opacity: 0.60
 }
 #meh { 
 	border-radius: 0 100px 100px 0;
@@ -88,12 +89,13 @@ i.icon.icon-chat-dj {
         opacity: 0.60;
 }
 #meh.selected, #meh .bottom, #meh.crowd-response.disabled.active .bottom {
-	background: linear-gradient(to top,#611111,rgba(97, 17, 17, 0.60) 100%)
+        color:red;
+	background-color:#1F0808;
         opacity: 0.60;
 }
 #grab.selected, #grab .bottom, #grab.crowd-response.disabled.active .bottom {
-        color:red;
-	background-color:#1F0808;
+        color:#45034B;
+	background-color:#00FBC0;
         opacity: 0.60;
 }
 #dj-button.is-wait, #dj-button.is-leave, #dj-button.is-quit, #dj-button.is-locked, #dj-button.is-full {
@@ -115,4 +117,7 @@ i.icon.icon-chat-dj {
 }
 #room-bar .icon-room { 
 	background: url(http://i.imgur.com/X4mtIZ1.png);
+}
+.body{
+	background:url('http://i.imgur.com/lK4GttQ.png')
 }
